@@ -1,0 +1,13 @@
+﻿order_id,order_date,customer_id,gender,region,category,product,quantity,unit_price,discount,customer_age,status,quantity_missing_flag,order_month,revenue,age_group
+O001,2025-01-03,C001,male,North,Technology,Laptop,1.0,1250.0,0.05,35.0,Delivered,0,2025-01,1187.5,26-35
+O002,2025-01-05,C002,male,South,Furniture,Office Chair,2.0,180.0,0.1,42.0,Delivered,0,2025-01,324.0,36-50
+O003,2025-01-07,C003,male,North,Office Supplies,Printer Paper,5.0,12.5,0.0,,Delivered,0,2025-01,62.5,
+O004,,C004,female,Central,Technology,Headset,3.0,45.0,0.05,29.0,Delayed,0,NaT,128.25,26-35
+O005,2025-01-11,C005,female,South,Furniture,Desk,1.0,350.0,0.15,31.0,Delivered,0,2025-01,297.5,26-35
+O006,,C006,female,West,Technology,Monitor,2.0,220.0,0.08,,Delivered,0,NaT,404.8,
+O007,2025-01-18,C007,male,Central,Office Supplies,Notebook,10.0,0.0,0.0,22.0,Cancelled,0,2025-01,0.0,<=25
+O008,2025-01-20,C008,male,North,Technology,Mouse,2.0,18.0,0.0,28.0,Delivered,1,2025-01,36.0,26-35
+O009,2025-01-23,C009,unknown,West,Furniture,Cabinet,1.0,480.0,0.12,,Delayed,0,2025-01,422.4,
+O010,2025-01-25,C010,female,South,Office Supplies,Pen Set,8.0,6.0,0.0,37.0,Unknown,0,2025-01,48.0,36-50
+O011,2025-02-02,C011,male,North,Technology,Tablet,1.0,550.0,,40.0,Delivered,0,2025-02,550.0,36-50
+O012,2025-02-04,C012,female,Central,Furniture,Meeting Table,1.0,900.0,0.2,33.0,Delivered,0,2025-02,720.0,26-35

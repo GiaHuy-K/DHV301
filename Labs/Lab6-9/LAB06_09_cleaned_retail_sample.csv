@@ -1,0 +1,16 @@
+﻿order_id,order_date,customer_id,gender,region,category,product,quantity,unit_price,discount,customer_age,status,order_month,revenue,age_group
+O001,2025-01-03,C001,male,North,Technology,Laptop,1,1250.0,0.05,35,Delivered,2025-01,1187.5,36-50
+O002,2025-01-05,C002,male,South,Furniture,Office Chair,2,180.0,0.1,42,Delivered,2025-01,324.0,36-50
+O003,2025-01-07,C003,male,North,Office Supplies,Printer Paper,5,12.5,0.0,,Delivered,2025-01,62.5,Unknown
+O004,2025-01-09,C004,female,Central,Technology,Headset,3,45.0,0.05,29,Delayed,2025-01,128.25,26-35
+O005,2025-01-11,C005,female,South,Furniture,Desk,1,350.0,0.15,31,Delivered,2025-01,297.5,26-35
+O006,2025-01-15,C006,female,West,Technology,Monitor,2,220.0,0.08,,Delivered,Unknown,404.8,Unknown
+O007,2025-01-18,C007,male,Central,Office Supplies,Notebook,10,3.5,0.0,22,Cancelled,2025-01,35.0,<=25
+O008,2025-01-20,C008,male,North,Technology,Mouse,4,18.0,0.0,28,Delivered,2025-01,72.0,26-35
+O009,2025-01-23,C009,unknown,West,Furniture,Cabinet,1,480.0,0.12,,Delayed,2025-01,422.4,Unknown
+O010,2025-01-25,C010,female,South,Office Supplies,Pen Set,8,6.0,0.0,37,Unknown,2025-01,48.0,36-50
+O011,2025-02-02,C011,male,North,Technology,Tablet,1,550.0,,40,Delivered,2025-02,550.0,36-50
+O012,2025-02-04,C012,female,Central,Furniture,Meeting Table,1,900.0,0.2,33,Delivered,2025-02,720.0,26-35
+O013,2025-02-07,C013,female,West,Technology,Keyboard,3,25.0,0.0,26,Delivered,2025-02,75.0,26-35
+O014,2025-02-10,C014,male,South,Furniture,Lamp,2,45.0,0.05,47,Delivered,2025-02,85.5,36-50
+O015,2025-02-13,C015,female,North,Office Supplies,Folders,12,2.5,0.0,24,Delivered,2025-02,30.0,<=25
