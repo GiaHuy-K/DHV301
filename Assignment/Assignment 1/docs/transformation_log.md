@@ -1,0 +1,13 @@
+# Transformation Log
+
+| Step_ID | Field | Transformation | Reason | Validation Result |
+| :--- | :--- | :--- | :--- | :--- |
+| **T01** | `Teacher_Comments` | `str.strip()` và thay chuỗi rỗng bằng `'No comment'` | Chuẩn hóa dữ liệu văn bản, loại bỏ khoảng trắng thừa và điền giá trị mặc định cho các ô trống. | Đã kiểm tra: Số dòng dính khoảng trắng sau xử lý đưa về `0`. |
+| **T02** | `Subject` | `.astype('category')` | Chuyển đổi sang kiểu dữ liệu danh mục (category) để tối ưu bộ nhớ và phục vụ phân nhóm. | Kiểu dữ liệu mới của cột `Subject` đã chuyển thành `category`. |
+| **T03** | `Homework_Completion_%` | Khử ký tự `%`, ép kiểu `numeric`, tính `median` của các dòng hợp lệ và thay thế các giá trị âm (< 0) bằng giá trị trung vị đó. | Làm sạch dữ liệu tỷ lệ phần trăm bị lỗi định dạng chuỗi và xử lý các giá trị âm không hợp lệ bằng phương pháp thế trung vị. | Tỷ lệ hoàn thành đã chuyển về dạng số, các giá trị lỗi đã được thay thế bằng mức trung vị hợp lệ. |
+| **T04** | `Exam_Score` | `.clip(upper=100)` | Giới hạn trần điểm số tối đa là 100 để xử lý các giá trị vượt quá thang điểm quy định. | Loại bỏ hoàn toàn các giá trị điểm quá giới hạn quy định (nếu có). |
+| **T05** | `Student_ID`, `Subject` | `.sort_values()` theo điểm giảm dần, sau đó `.drop_duplicates(keep='first')` | Xử lý các bản ghi trùng lặp một cách logic: chỉ giữ lại bản ghi có điểm thi cao nhất cho mỗi học sinh ở từng môn học. | Đảm bảo tính duy nhất (Unique Key) cho cặp dữ liệu học sinh - môn học. |
+| **T06** | `Exam_Status` *(Derived)* | `np.where(Exam_Score >= 50, 'Pass', 'Fail')` | Tạo trường phái sinh phân loại trạng thái Đạt/Trượt để hỗ trợ báo cáo và thống kê nhanh. | Phân loại chính xác 100% dựa trên điều kiện điểm số. |
+| **T07** | `Academic_Grade` *(Derived)* | Áp dụng hàm `classify_grade` phân loại 5 mức: *Excellent, Good, Average, Below Average, Weak*. | Phân bậc học lực chi tiết của học sinh từ điểm số để hỗ trợ vẽ biểu đồ phân phối và trực quan hóa. | Toàn bộ điểm số được chuyển sang nhãn học lực tương ứng một cách logic. |
+| **T08** | `Homework_Effort_Group` *(Derived)* | `pd.cut()` với các bins tương ứng thành 3 mức: *Low, Medium, High Effort*. | Phân nhóm mức độ chăm chỉ làm bài tập để đánh giá sự tương quan giữa thái độ học tập và kết quả thi. | Dữ liệu tỷ lệ được chuyển thành biến phân loại có thứ tự (Ordinal category). |
+| **T09** | `Academic_Risk_Flag` *(Derived)* | `np.where()` gắn cờ `1` nếu điểm thi < 50 VÀ tỷ lệ bài tập $\le$ 85. | Tạo hệ thống cảnh báo sớm (Early Warning) những học sinh có rủi ro học tập cao (vừa lười làm bài vừa điểm thấp) để giáo viên can thiệp kịp thời. | Gắn cờ chính xác các trường hợp thỏa mãn đồng thời cả 2 điều kiện bất lợi. |

@@ -5,3 +5,10 @@
 venv/
 env/
 
+*.png
+*.csv
+
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
